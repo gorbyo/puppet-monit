@@ -14,7 +14,7 @@ define monit::process(
   $stop_command,
   $ensure   = 'running',
   $matching = $name,
-  $pidfile  = '',
+  $pidfile  = undef,
   $timeout  = 30,
 ) {
 
