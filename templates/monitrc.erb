@@ -28,7 +28,7 @@
 ## a standalone log file instead, specify the full path to the log file
 #
 <%- if @use_syslog %>
-  set logfile syslogs
+  set logfile syslog
 <%- else %>
   set logfile /var/log/monit.log
 <%- end %>
