@@ -1,0 +1,13 @@
+{
+  "author": "Oleh Horbachov",
+  "dependencies": [],
+  "license": "Apache",
+  "name": "gorbyo-monit",
+  "operatingsystem_support": [],
+  "project_page": "",
+  "requirements": [],
+  "source": "git@github.com:gorbyo/puppet-monit.git",
+  "summary": "Monit Module",
+  "tags": [],
+  "version": "0.1.0"
+}
