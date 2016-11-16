@@ -5,7 +5,7 @@ class monit::service {
     enable     => true,
     hasstatus  => true,
     hasrestart => true,
-    require    => Package[ 'monit' ]
+    require    => Package['monit']
   }
 
 }

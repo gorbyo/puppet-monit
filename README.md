@@ -4,6 +4,14 @@ This module manages installing, configuring and running processes using monit.
 
 ## Parameters
 
+### General
+  * httpd: enable web ui. default: false
+  * httpd_listen: ip address of network interface. default: 'localhost'
+  * httpd_allow: trusted host or network for remote access.  default: 'localhost'
+  * httpd_username: trusted user. default: 'admin'
+  * httpd_password: password for trusted user. default: 'monit'
+
+### Process
  * ensure: running, stopped. default: running
  * start_command: Command line to start service.
  * stop_command: Command line to stop service.
@@ -12,8 +20,8 @@ This module manages installing, configuring and running processes using monit.
 ## Usage
     class { 'monit':
       interval   => 120,
-      httpd      => true,
       use_syslog => false,
+      httpd      => true,
       httpd_listen  => 'localhost',
       httpd_allow   => 'localhost',
       httpd_username   => 'admin',

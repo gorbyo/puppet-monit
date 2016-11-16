@@ -1,7 +1,7 @@
 {
   "author": "Oleh Horbachov",
   "dependencies": [],
-  "license": "Apache",
+  "license": "Apache-2.0",
   "name": "gorbyo-monit",
   "operatingsystem_support": [],
   "project_page": "",
