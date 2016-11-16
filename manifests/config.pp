@@ -4,21 +4,21 @@
 # [interval] - Status polling interval for monit. Optional. Default 30 sec.
 #
 class monit::config (
-  $use_syslog = true,
-  $interval   = 30,
-  $httpd      = false,
-  $ip_listen  = 'localhost',
-  $ip_allow   = 'localhost',
-  $username   = 'admin',
-  $password   = 'monit',
+  $use_syslog     = false,
+  $interval       = 30,
+  $httpd          = false,
+  $httpd_listen   = 'localhost',
+  $httpd_allow    = 'localhost',
+  $httpd_username = 'admin',
+  $httpd_password = 'monit',
 ) {
 
-include monit::params
-$config = $::monit::params::config
-$included = $::monit::params::included
-$idfile = $::monit::params::idfile
-$statefile = $::monit::params::statefile
-$basedir = $::monit::params::basedir
+  include monit::params
+  $config = $::monit::params::config
+  $included = $::monit::params::included
+  $idfile = $::monit::params::idfile
+  $statefile = $::monit::params::statefile
+  $basedir = $::monit::params::basedir
 
   file { $config :
     ensure  => present,

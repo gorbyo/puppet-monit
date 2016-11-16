@@ -6,7 +6,15 @@ class monit::params {
       $statefile  = '/var/lib/monit/.state'
       $basedir    = '/var/lib/monit'
       $included   = '/etc/monit.d'
-      $config     = '/etc/monitrc'
+
+      case $::operatingsystemmajrelease {
+        '6': {
+          $config   = '/etc/monit.conf'
+        }
+        '7': {
+          $config   = '/etc/monitrc'
+        }
+      }
 
       file { $basedir:
         ensure => 'directory',

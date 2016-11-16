@@ -121,9 +121,9 @@
 #
 <% if @httpd -%>
   set httpd port 2812 and
-     use address <%= @ip_listen %>  # only accept connection from localhost
-     allow <%= @ip_allow %>        # allow localhost to connect to the server and
-     allow <%= @username %>:<%= @password %>      # require user 'admin' with password 'monit'
+     use address <%= @httpd_listen %>  # only accept connection from localhost
+     allow <%= @httpd_allow %>        # allow localhost to connect to the server and
+     allow <%= @httpd_username %>:<%= @httpd_password %>      # require user 'admin' with password 'monit'
      allow @monit           # allow users of group 'monit' to connect (rw)
      allow @users readonly  # allow users of group 'users' to connect readonly
 <% else -%>
