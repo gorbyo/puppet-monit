@@ -1,5 +1,5 @@
 ###############################################################################
-## Monit control file
+## PUPPET Monit control file
 ###############################################################################
 ##
 ## Comments begin with a '#' and extend through the end of the line. Keywords
@@ -16,7 +16,9 @@
 ##
 ## Start Monit in the background (run as a daemon):
 #
-  set daemon <%= @interval %>             # check services at <%= @interval %>-sec intervals
+  set daemon <%= @interval %>
+# check services at <%= @interval %>-sec intervals
+#
 #   with start delay 240    # optional: delay the first check by 4-minutes (by
 #                           # default Monit check immediately after Monit start)
 #
@@ -26,7 +28,7 @@
 ## a standalone log file instead, specify the full path to the log file
 #
 <%- if @use_syslog %>
-  set logfile syslog facility log_daemon
+  set logfile syslogs
 <%- else %>
   set logfile /var/log/monit.log
 <%- end %>
@@ -82,7 +84,7 @@
 #
 ## Monit by default uses the following format for alerts if the the mail-format
 ## statement is missing::
-## --8<--
+##
 ## set mail-format {
 ##      from: monit@$HOST
 ##   subject: monit alert --  $EVENT $SERVICE
@@ -95,7 +97,7 @@
 ##            Your faithful employee,
 ##            Monit
 ## }
-## --8<--
+##
 ##
 ## You can override this message format or parts of it, such as subject
 ## or sender using the MAIL-FORMAT statement. Macros such as $DATE, etc.

@@ -2,11 +2,18 @@
 class monit::params {
   case $::osfamily {
     'RedHat' : {
-      $idfile     = '/var/.monit.id'
-      $statefile  = '/var/.monit.state'
-      $basedir    = '/var/monit'
+      $idfile     = '/var/lib/monit/.id'
+      $statefile  = '/var/lib/monit/.state'
+      $basedir    = '/var/lib/monit'
       $included   = '/etc/monit.d'
-      $config     = '/etc/monit.conf'
+      $config     = '/etc/monitrc'
+
+      file { $basedir:
+        ensure => 'directory',
+        owner  => 'root',
+        group  => 'root',
+        mode   => '0750',
+      }
     }
     'Debian' : {
       $idfile     = '/var/lib/monit/id'
