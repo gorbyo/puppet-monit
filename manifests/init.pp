@@ -34,6 +34,8 @@ class monit(
     httpd_allow    => $httpd_allow,
     httpd_username => $httpd_username,
     httpd_password => $httpd_password,
+    mailserver     => $mailserver,
+    alert_emails   => $alert_emails,
     notify         => Class['monit::service'],
     require        => Class['monit::package'],
   }
