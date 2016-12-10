@@ -11,6 +11,8 @@ class monit::config (
   $httpd_allow    = 'localhost',
   $httpd_username = 'admin',
   $httpd_password = 'monit',
+  $mailserver     = undef,
+  $alert_emails   = undef,
 ) {
 
   include monit::params
