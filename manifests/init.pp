@@ -18,6 +18,8 @@ class monit(
   $httpd_allow    = $monit::config::httpd_allow,
   $httpd_username = $monit::config::httpd_username,
   $httpd_password = $monit::config::httpd_password,
+  $mailserver     = $monit::config::mailserver,
+  $alert_emails  = $monit::config::alert_emails,
 ) {
 
   class {'monit::package':
