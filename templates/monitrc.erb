@@ -52,12 +52,12 @@
 ## specified using a comma separator. If the first mail server fails, Monit
 # will use the second mail server in the list and so on. By default Monit uses
 # port 25 - it is possible to override this with the PORT option.
-<%- if @mailserver %>
+<% if @mailserver -%>
 set mailserver <%= @mailserver %>
-<% end %>
-<%- if @alert_emails %>
+<% end -%>
+<% if @alert_emails -%>
 set alert <%= @alert_emails %>
-<%- end %>
+<% end -%>
 ## By default Monit will drop alert events if no mail servers are available.
 ## If you want to keep the alerts for later delivery retry, you can use the
 ## EVENTQUEUE statement. The base directory where undelivered alerts will be
